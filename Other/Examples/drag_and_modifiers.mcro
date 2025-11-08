@@ -1,0 +1,127 @@
+// Drag and Modifier Keys Example
+// This demonstrates the new mouse hold/release and keyboard toggle/untoggle syntax
+// These commands are now automatically generated when recording
+
+// === SIMPLE DRAG OPERATION ===
+// Move to starting position
+mouse.move(200, 200)
+wait(200)
+
+// Hold left mouse button
+mouse.hold(left)
+wait(100)
+
+// Move while holding (creates drag effect)
+mouse.move(400, 400)
+wait(500)
+
+// Release mouse button
+mouse.release(left)
+wait(1000)
+
+// === COPY-PASTE WITH MODIFIER KEYS ===
+// Select some text with Shift+Arrow keys
+keyboard.toggle(shift)
+keyboard.button(right)
+keyboard.button(right)
+keyboard.button(right)
+keyboard.button(right)
+keyboard.button(right)
+keyboard.untoggle(shift)
+wait(200)
+
+// Copy with Ctrl+C
+keyboard.toggle(ctrl)
+keyboard.key(c)
+keyboard.untoggle(ctrl)
+wait(500)
+
+// Move cursor
+keyboard.button(end)
+keyboard.button(enter)
+wait(200)
+
+// Paste with Ctrl+V
+keyboard.toggle(ctrl)
+keyboard.key(v)
+keyboard.untoggle(ctrl)
+wait(500)
+
+// === RIGHT-CLICK DRAG ===
+// Right mouse button drag
+mouse.move(300, 300)
+wait(200)
+
+mouse.hold(right)
+wait(100)
+
+mouse.move(500, 500)
+wait(300)
+
+mouse.release(right)
+wait(500)
+
+// === MIDDLE MOUSE BUTTON ===
+// Middle mouse button operations
+mouse.move(400, 300)
+wait(200)
+
+mouse.hold(middle)
+wait(100)
+
+mouse.move(400, 500)
+wait(300)
+
+mouse.release(middle)
+wait(500)
+
+// === COMPLEX MODIFIER COMBINATIONS ===
+// Ctrl+Shift+End (select to end of document)
+keyboard.toggle(ctrl)
+keyboard.toggle(shift)
+keyboard.button(end)
+keyboard.untoggle(shift)
+keyboard.untoggle(ctrl)
+wait(500)
+
+// === PAINTING/DRAWING SIMULATION ===
+// Simulate drawing with held mouse button
+mouse.move(100, 100)
+wait(200)
+
+mouse.hold(left)
+wait(50)
+
+// Draw a square
+mouse.move(300, 100)
+wait(100)
+
+mouse.move(300, 300)
+wait(100)
+
+mouse.move(100, 300)
+wait(100)
+
+mouse.move(100, 100)
+wait(100)
+
+mouse.release(left)
+wait(500)
+
+// === ALT KEY USAGE ===
+// Use Alt for menu access
+keyboard.toggle(alt)
+wait(100)
+keyboard.key(f)
+keyboard.untoggle(alt)
+wait(300)
+
+// === NOTE ===
+// When you record actions, the recorder now automatically generates:
+// - mouse.hold() and mouse.release() instead of mouse.click()
+// - keyboard.toggle() and keyboard.untoggle() for modifier keys (Shift, Ctrl, Alt)
+// - keyboard.button() for special keys (Enter, Tab, etc.)
+// - keyboard.key() for regular characters
+//
+// This gives you more precise control over timing and allows for
+// complex operations like dragging, text selection, and modifier combinations

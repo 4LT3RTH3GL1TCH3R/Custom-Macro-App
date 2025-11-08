@@ -1,0 +1,33 @@
+// Gaming Macro Example
+// Rapid fire combo with precise timing
+
+// Ability combo
+keyboard.key(q)
+wait(50)
+keyboard.key(w)
+wait(50)
+keyboard.key(e)
+wait(50)
+keyboard.key(r)
+
+wait(200)
+
+// Rapid clicks
+mouse.click(left)
+wait(100)
+mouse.click(left)
+wait(100)
+mouse.click(left)
+wait(100)
+
+// Reload
+keyboard.key(r)
+wait(2000)
+
+// Sprint and jump
+keyboard.toggle(shift)
+keyboard.key(w)
+wait(500)
+keyboard.button(space)
+wait(200)
+keyboard.untoggle(shift)
