@@ -1,0 +1,92 @@
+// Shell Commands Example
+// Demonstrates running CMD and PowerShell commands
+
+// ===== CMD COMMANDS =====
+
+// Create a directory
+cmd.run("mkdir C:\Temp\MacroTest")
+wait(500)
+
+// Create a text file using echo
+cmd.run("echo Hello from CMD > C:\Temp\MacroTest\test.txt")
+wait(500)
+
+// List directory contents
+cmd.run("dir C:\Temp\MacroTest")
+wait(1000)
+
+// Open the created file in Notepad
+cmd.run("notepad C:\Temp\MacroTest\test.txt")
+wait(2000)
+
+// Close Notepad
+window.close("Notepad")
+wait(500)
+
+// ===== POWERSHELL COMMANDS =====
+
+// Get system information
+ps.run("Get-ComputerInfo | Select-Object CsName, OsArchitecture, WindowsVersion")
+wait(1000)
+
+// Create a file with PowerShell
+ps.run("Set-Content -Path C:\Temp\MacroTest\ps_test.txt -Value 'Hello from PowerShell'")
+wait(500)
+
+// Get running processes (sorted by CPU usage)
+ps.run("Get-Process | Sort-Object CPU -Descending | Select-Object -First 5")
+wait(1000)
+
+// Open File Explorer to the test directory
+ps.run("explorer C:\Temp\MacroTest")
+wait(2000)
+
+// Close File Explorer
+window.close("MacroTest")
+wait(500)
+
+// ===== NETWORK COMMANDS =====
+
+// Ping Google
+cmd.run("ping google.com -n 4")
+wait(3000)
+
+// Get network adapter info
+ps.run("Get-NetAdapter | Select-Object Name, Status, LinkSpeed")
+wait(1000)
+
+// ===== CLEANUP =====
+
+// Delete test files
+cmd.run("del C:\Temp\MacroTest\*.txt")
+wait(500)
+
+// Remove test directory
+cmd.run("rmdir C:\Temp\MacroTest")
+wait(500)
+
+// ===== USEFUL EXAMPLES =====
+
+// Open System Properties
+// cmd.run("sysdm.cpl")
+
+// Open Task Manager
+// cmd.run("taskmgr")
+
+// Open Control Panel
+// cmd.run("control")
+
+// Flush DNS cache
+// cmd.run("ipconfig /flushdns")
+
+// Get WiFi passwords (requires admin)
+// cmd.run("netsh wlan show profiles")
+
+// Take a screenshot using PowerShell
+// ps.run("Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('%{PRTSC}')")
+
+// Get battery status
+// ps.run("Get-WmiObject -Class Win32_Battery | Select-Object EstimatedChargeRemaining")
+
+// List installed programs
+// ps.run("Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion")

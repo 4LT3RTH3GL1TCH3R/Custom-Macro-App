@@ -1,0 +1,26 @@
+// Example Macro 1: Basic Mouse and Keyboard
+// This demonstrates basic mouse movements and clicks
+
+mouse.move(100, 100)
+wait(500)
+mouse.click(left)
+wait(200)
+
+// Type some text
+keyboard.key(h)
+keyboard.key(e)
+keyboard.key(l)
+keyboard.key(l)
+keyboard.key(o)
+
+wait(500)
+
+// Use special keys
+keyboard.button(space)
+keyboard.key(w)
+keyboard.key(o)
+keyboard.key(r)
+keyboard.key(l)
+keyboard.key(d)
+
+keyboard.button(enter)
